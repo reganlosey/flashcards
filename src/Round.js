@@ -7,7 +7,6 @@ class Round {
     this.turns = 0;
     this.incorrectGuesses = [];
     this.correctGuesses = 0;
-    this.percentCorrect;
   }
 
   returnCurrentCard() {
@@ -32,14 +31,13 @@ class Round {
 // should be 1 divided by 3 which equals 33.3333 etc. We're on the right track
 
   calculatePercentCorrect() {
-    let guessSum = this.correctGuesses - this.incorrectGuesses.length;
-    this.percentCorrect = (Math.floor(guessSum/this.turns * 100));
-    return this.percentCorrect;
+    var guessSum = this.correctGuesses - this.incorrectGuesses.length;
+    return (Math.floor(guessSum/this.turns * 100));
   }
 
   endRound(){
-    if (this.turns === this.deck.length);
-    console.log(`**Round Over!** You answered ${this.percentCorrect} percent of the questions correctly!`)
+    console.log(`**Round Over!** You answered ${this.calculatePercentCorrect()} percent of the questions correctly!`)
+    return `**Round Over!** You answered ${this.calculatePercentCorrect()} percent of the questions correctly!`
   }
 }
 
