@@ -24,12 +24,7 @@ class Round {
     }
     return newTurn.giveFeedback();
   }
-
-// total turn is 3
-// 2 correct guesses
-//1 total incorrect guesses
-// should be 1 divided by 3 which equals 33.3333 etc. We're on the right track
-
+  
   calculatePercentCorrect() {
     var guessSum = this.correctGuesses - this.incorrectGuesses.length;
     return (Math.floor(guessSum/this.turns * 100));
