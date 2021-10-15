@@ -21,9 +21,6 @@ class Game {
     this.printQuestion(this.currentRound);
   }
 
-  //for each position in the prototype questions array, I want to create a new instance of the Card class w/ the parameters id, question, answers, correctAnswer.
-  //cardToCreate is holding the position of the prototypeQuestions array and we're using it to call each parameter for our card class.
-
   createCards() {
     prototypeQuestions.forEach((cardToCreate) =>
       this.newRoundCards.push(new Card(cardToCreate.id, cardToCreate.question, cardToCreate.answers, cardToCreate.correctAnswer))
